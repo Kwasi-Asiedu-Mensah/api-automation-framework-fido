@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api-automation:
+    build: .
+    container_name: api-automation
+    ports:
+      - "8000:8000"
+    image: api-automation:latest
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: mvn clean test
+
+    tty: true

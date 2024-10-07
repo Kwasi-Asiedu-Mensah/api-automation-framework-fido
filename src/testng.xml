@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="API Automation Tests">
+    <test name="Authentication Tests">
+        <classes>
+            <class name="com.videogames.api.tests.AuthenticationTest"/>
+        </classes>
+    </test>
+    <test name="Video Games Tests">
+        <classes>
+            <class name="com.videogames.api.tests.VideoGamesTest"/>
+        </classes>
+    </test>
+    <test name="Video Games V2 Tests">
+        <classes>
+            <class name="com.videogames.api.tests.VideoGamesV2Tests"/>
+        </classes>
+    </test>
+</suite>
