@@ -113,7 +113,7 @@ The project includes a CI pipeline using GitHub Actions to automatically run tes
 
 To check the CI status or add additional CI configurations:
 1. **Check the `.github/workflows/ci.yml`** file for the pipeline configuration.
-2. To view the CI build status or logs, go to your project's GitHub repository and click on the "Actions" tab.
+2. To view the CI build status or logs, go to the project's GitHub repository and click on the "Actions" tab.
 
 ## Project Structure
 
