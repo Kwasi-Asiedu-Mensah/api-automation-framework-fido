@@ -36,7 +36,7 @@ jobs:
 
       # Install dependencies and run tests
       - name: Run Maven tests
-        run: mvn clean test -X
+        run: mvn clean test -X -e
 
       # Install Allure CLI (version 2.10.0)
       - name: Install Allure CLI
