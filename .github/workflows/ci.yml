@@ -34,11 +34,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
 
-      # Install dependencies and run tests
-      - name: Run Maven tests
-        run: mvn clean test -X -e
-
-      # Install Allure CLI (version 2.10.0)
+        # Install Allure CLI (version 2.10.0)
       - name: Install Allure CLI
         run: |
           sudo apt-get update
@@ -47,6 +43,10 @@ jobs:
           unzip allure-2.10.0.zip -d /opt/
           sudo ln -s /opt/allure-2.10.0/bin/allure /usr/local/bin/allure
           allure --version  # Check if allure is installed successfully
+
+      # Install dependencies and run tests
+      - name: Run Maven tests
+        run: mvn clean test
 
       # Generate Allure report
       - name: Generate Allure report
