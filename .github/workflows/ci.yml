@@ -38,7 +38,7 @@ jobs:
       - name: Run Maven tests
         run: mvn clean test
 
-      # Install Allure CLI (corresponding with the Allure version in pom.xml)
+      # Install Allure CLI (version 2.10.0)
       - name: Install Allure CLI
         run: |
           sudo apt-get update
