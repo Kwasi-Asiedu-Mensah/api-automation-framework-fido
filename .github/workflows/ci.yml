@@ -37,3 +37,14 @@ jobs:
       # Install dependencies and run tests
       - name: Run Maven tests
         run: mvn clean test
+
+      # Generate Allure report
+      - name: Generate Allure report
+        run: mvn allure:report
+
+      # Publish Allure report
+      - name: Publish Allure report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: target/site/allure-maven-plugin/
