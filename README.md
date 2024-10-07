@@ -68,7 +68,7 @@ After running the tests, you can generate and view the Allure reports:
    mvn allure:serve
    ```
 
-   The report will be available at [http://localhost:53714](http://localhost:8080).
+   The report will automatically open in your browser
 
 Test results will also be generated in the `allure-results` directory.
 
@@ -105,7 +105,7 @@ If you want to run the tests inside a Docker container, follow these steps:
    docker exec -it api-automation mvn allure:serve
    ```
 
-The report will be available on your local browser at [http://localhost:53714](http://localhost:8080).
+The report will be available on your local browser.
 
 ## Continuous Integration (CI) Setup
 
