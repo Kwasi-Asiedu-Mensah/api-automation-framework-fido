@@ -34,14 +34,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven
 
-        # Install Allure CLI (version 2.10.0)
+      # Install Allure CLI (latest version 2.21.2)
       - name: Install Allure CLI
         run: |
           sudo apt-get update
           sudo apt-get install -y wget unzip
-          wget https://github.com/allure-framework/allure2/releases/download/2.10.0/allure-2.10.0.zip
-          unzip allure-2.10.0.zip -d /opt/
-          sudo ln -s /opt/allure-2.10.0/bin/allure /usr/local/bin/allure
+          wget https://github.com/allure-framework/allure2/releases/download/2.21.2/allure-2.21.2.zip
+          unzip allure-2.21.2.zip -d /opt/
+          sudo ln -s /opt/allure-2.21.2/bin/allure /usr/local/bin/allure
           allure --version  # Check if allure is installed successfully
 
       # Install dependencies and run tests
