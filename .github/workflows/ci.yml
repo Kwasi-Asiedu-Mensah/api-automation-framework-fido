@@ -39,11 +39,29 @@
                     sudo apt-get update
                     sudo apt-get install -y wget unzip
                     wget  wget https://github.com/allure-framework/allure2/archive/refs/tags/2.10.0.zip
-                    unzip 2.10.0.zip -d /opt/
-                    sudo ln -s /opt/allure-2.10.0/bin/allure /usr/local/bin/allure
-                    allure --version || echo "Allure CLI installation failed!"  # Check if allure is installed successfully
+                     # Check if download was successful
+                    if [ $? -ne 0 ]; then
+                      echo "Failed to download Allure CLI"
+                      exit 1
+                      fi
 
-                # Install dependencies and run tests
+            # Unzip the file and check for success
+                      unzip allure.zip -d /opt/
+                       if [ $? -ne 0 ]; then
+                       echo "Failed to unzip Allure CLI"
+                        exit 1
+                        fi
+            
+            # Create symlink and check if successful
+                        sudo ln -sf /opt/allure-2.10.0/bin/allure /usr/local/bin/allure
+                        if [ $? -ne 0 ]; then
+                        echo "Failed to create Allure symlink"
+                        exit 1
+                        fi
+            
+                         allure --version || echo "Allure CLI installation failed!"  # Check if allure is installed successfully
+
+          # Install dependencies and run tests
                 - name: Run Maven tests
                   run: mvn clean test
 
